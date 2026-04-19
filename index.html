@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Тест о йоге</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html {
+      font-size: 16px;
+    }
+
+    @media (max-width: 640px) {
+      html { font-size: 15px; }
+    }
+
+    @media (max-width: 400px) {
+      html { font-size: 14px; }
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 32px auto;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      text-align: center;
+      color: #1e3a8a;
+      font-size: 1.8rem;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: #4b5563;
+      margin-bottom: 28px;
+    }
+
+    .question {
+      padding: 18px;
+      margin-bottom: 18px;
+      border: 1px solid #dbe3f0;
+      border-radius: 12px;
+      background: #f9fbff;
+    }
+
+    .question h3 {
+      margin: 0 0 12px;
+      font-size: 1.1rem;
+    }
+
+    label.option {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+      margin: 8px 0;
+      padding: 8px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    label.option:hover {
+      background: #eef4ff;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    button, .file-label {
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      background: #2563eb;
+      color: white;
+      transition: 0.2s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button:hover, .file-label:hover {
+      background: #1d4ed8;
+    }
+
+    button.secondary {
+      background: #059669;
+    }
+
+    button.secondary:hover {
+      background: #047857;
+    }
+
+    button.gray {
+      background: #6b7280;
+    }
+
+    button.gray:hover {
+      background: #4b5563;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .result {
+      margin-top: 24px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      display: none;
+    }
+
+    .result h2 {
+      margin-top: 0;
+      color: #000000;
+    }
+
+    .note {
+      margin-top: 12px;
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        margin: 16px;
+        padding: 16px;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      button, .file-label {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Тест о йоге</h1>
+    <p class="subtitle">Пройдите тест, проверьте свои знания и сохраните ответы в файл.</p>
+
+    <form id="quizForm">
+
+      <div class="question">
+        <h3>1. Что в переводе означает слово «йога»?</h3>
+        <label class="option"><input type="radio" name="q1" value="a"> Отдых</label>
+        <label class="option"><input type="radio" name="q1" value="b"> Единение</label>
+        <label class="option"><input type="radio" name="q1" value="c"> Дыхание</label>
+      </div>
+
+      <div class="question">
+        <h3>2. Какая практика в йоге связана с управлением дыханием?</h3>
+        <label class="option"><input type="radio" name="q2" value="a"> Пранаяма</label>
+        <label class="option"><input type="radio" name="q2" value="b"> Мантра</label>
+        <label class="option"><input type="radio" name="q2" value="c"> Карма</label>
+      </div>
+
+      <div class="question">
+        <h3>3. Как называется поза дерева?</h3>
+        <label class="option"><input type="radio" name="q3" value="a"> Шавасана</label>
+        <label class="option"><input type="radio" name="q3" value="b"> Врикшасана</label>
+        <label class="option"><input type="radio" name="q3" value="c"> Бхуджангасана</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Какая цель у шавасаны?</h3>
+        <label class="option"><input type="radio" name="q4" value="a"> Интенсивная нагрузка</label>
+        <label class="option"><input type="radio" name="q4" value="b"> Растяжка ног</label>
+        <label class="option"><input type="radio" name="q4" value="c"> Глубокое расслабление</label>
+      </div>
+
+      <div class="question">
+        <h3>5. Что обычно развивает регулярная практика йоги?</h3>
+        <label class="option"><input type="radio" name="q5" value="a"> Гибкость и концентрацию</label>
+        <label class="option"><input type="radio" name="q5" value="b"> Только скорость</label>
+        <label class="option"><input type="radio" name="q5" value="c"> Только мышечную массу</label>
+      </div>
+
+    </form>
+
+    <div class="actions">
+      <button type="button" onclick="checkAnswers()">Проверить результат</button>
+      <button type="button" class="secondary" onclick="saveToFile()">Записать ответы в файл</button>
+      <label for="fileInput" class="file-label gray">Прочитать ответы из файла</label>
+      <input type="file" id="fileInput" accept=".txt" onchange="loadFromFile(event)">
+      <button type="button" class="gray" onclick="resetQuiz()">Сбросить тест</button>
+    </div>
+
+    <div class="result" id="resultBox">
+      <h2>Результат</h2>
+      <div id="resultText"></div>
+      <div class="note">После проверки можно сохранить выбранные ответы в файл, а затем снова загрузить их на страницу.</div>
+    </div>
+
+  </div>
+
+<script>
+const correctAnswers = { q1:'b', q2:'a', q3:'b', q4:'c', q5:'a' };
+
+const answerTexts = {
+  q1:{a:'Отдых',b:'Единение',c:'Дыхание'},
+  q2:{a:'Пранаяма',b:'Мантра',c:'Карма'},
+  q3:{a:'Шавасана',b:'Врикшасана',c:'Бхуджангасана'},
+  q4:{a:'Интенсивная нагрузка',b:'Растяжка ног',c:'Глубокое расслабление'},
+  q5:{a:'Гибкость и концентрацию',b:'Только скорость',c:'Только мышечную массу'}
+};
+
+const questions = {
+  q1:'Что в переводе означает слово «йога»?',
+  q2:'Какая практика в йоге связана с управлением дыханием?',
+  q3:'Как называется поза дерева?',
+  q4:'Какая цель у шавасаны?',
+  q5:'Что обычно развивает регулярная практика йоги?'
+};
+
+function getSelectedAnswers(){
+  const answers={};
+  for(let i=1;i<=5;i++){
+    const key='q'+i;
+    const selected=document.querySelector(`input[name="${key}"]:checked`);
+    answers[key]=selected?selected.value:null;
+  }
+  return answers;
+}
+
+function checkAnswers(){
+  const answers=getSelectedAnswers();
+  let score=0,answeredCount=0;
+
+  for(const key in correctAnswers){
+    if(answers[key]!==null)answeredCount++;
+    if(answers[key]===correctAnswers[key])score++;
+  }
+
+  document.getElementById('resultText').innerHTML=
+    `<p><strong>Правильных ответов:</strong> ${score} из 5</p>
+     <p><strong>Отвечено вопросов:</strong> ${answeredCount} из 5</p>`;
+
+  document.getElementById('resultBox').style.display='block';
+}
+
+function saveToFile(){
+  const answers=getSelectedAnswers();
+  let score=0;
+  let text='ТЕСТ О ЙОГЕ\r\nДата: '+new Date().toLocaleString('ru-RU')+'\r\n\r\n';
+
+  for(let i=1;i<=5;i++){
+    const key='q'+i;
+    const user=answers[key]?answerTexts[key][answers[key]]:'Нет ответа';
+    const correct=answerTexts[key][correctAnswers[key]];
+    if(answers[key]===correctAnswers[key])score++;
+
+    text+=`${i}. ${questions[key]}\r\nВаш ответ: ${user}\r\nПравильный: ${correct}\r\n\r\n`;
+  }
+
+  text+=`Итог: ${score} из 5`;
+
+  const blob=new Blob([text],{type:'text/plain'});
+  const link=document.createElement('a');
+  link.href=URL.createObjectURL(blob);
+  link.download='answers.txt';
+  link.click();
+}
+
+function loadFromFile(e){
+  const file=e.target.files[0];
+  if(!file)return;
+
+  const reader=new FileReader();
+  reader.onload=function(ev){
+    const lines=ev.target.result.split(/\r?\n/);
+    let idx=0,loaded={};
+
+    for(const line of lines){
+      if(line.startsWith('Ваш ответ:')){
+        idx++;
+        const val=line.replace('Ваш ответ:','').trim();
+        const key='q'+idx;
+
+        if(val!=='Нет ответа'){
+          const found=Object.entries(answerTexts[key]).find(([,t])=>t===val);
+          if(found)loaded[key]=found[0];
+        }
+      }
+    }
+
+    document.getElementById('quizForm').reset();
+    for(const k in loaded){
+      document.querySelector(`input[name="${k}"][value="${loaded[k]}"]`).checked=true;
+    }
+  };
+  reader.readAsText(file);
+}
+
+function resetQuiz(){
+  document.getElementById('quizForm').reset();
+  document.getElementById('resultBox').style.display='none';
+}
+</script>
+
+</body>
+</html>
